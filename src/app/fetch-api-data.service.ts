@@ -28,10 +28,10 @@ export class FetchApiDataService {
   }
   
   // Non-typed response extraction
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: Response | Object): any {
     const body = res;
     return body || { };
-  }
+  } 
 
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
