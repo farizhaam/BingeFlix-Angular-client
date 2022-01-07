@@ -22,6 +22,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     GenreCardComponent,
-    DirectorCardComponent
+    DirectorCardComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
