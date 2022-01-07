@@ -26,7 +26,7 @@
     max-width: 300px;
     width: 300px;
 }
-.mat-icon {
+.mat-icon-button {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -49,4 +49,8 @@ img {
 }
 .director-button{
     padding: 0px !important;
+}
+.synopsis-button{
+
+    right: -12px;
 }
