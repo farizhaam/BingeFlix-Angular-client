@@ -1,9 +1,9 @@
 #mat-dialog-0 {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .movies-wrapper {
+}
+
+.movies-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,11 +11,11 @@
     padding: 60px 30px;
     background-color: #fff;
     @media screen and (max-width: 500px) {
-      padding: 0;
+        padding: 0;
     }
-  }
-  
-  .mat-card {
+}
+
+.mat-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,20 +25,28 @@
     background-color: #fff;
     max-width: 300px;
     width: 300px;
-    .mat-icon-button {
-      position: absolute;
-      top: 25px;
-      right: 25px;
-    }
-    img {
-      max-width: 250px;
-    }
-    .mat-card-header {
-      text-align: center;
-    }
-    .mat-card-actions {
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
-    }
-  }
+}
+.mat-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+img {
+    width: 250px;
+}
+.mat-card-header {
+    text-align: center;
+}
+.mat-card-actions {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.genre-button{
+    color: #000;
+    border-radius: 20px;
+    border: 2px #fff;
+}
+.director-button{
+    padding: 0px !important;
+}
