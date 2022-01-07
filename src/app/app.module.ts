@@ -23,7 +23,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { MovieViewComponent } from './movie-view/movie-view.component';
 import { SynopsisCardComponent } from './synopsis-card/synopsis-card.component';
 
 const appRoutes: Routes = [
@@ -42,7 +41,6 @@ const appRoutes: Routes = [
     GenreCardComponent,
     DirectorCardComponent,
     UserProfileComponent,
-    MovieViewComponent,
     SynopsisCardComponent
   ],
   imports: [
