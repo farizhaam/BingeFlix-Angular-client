@@ -16,7 +16,7 @@ export class MovieCardComponent {
   
   user: any = JSON.parse(localStorage.getItem('user') || '');
   movies: any[] = [];
-  favMovies: any[] = this.user.FavoriteMovies;
+  favMovies: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -61,7 +61,7 @@ export class MovieCardComponent {
 
   getUserFavs(): any {
     this.fetchApiData.getFavMovies(this.user.Username).subscribe((res: any) => {
-      this.favMovies = res.Favorites;
+      this.favMovies = res.FavoriteMovies;
       return this.favMovies;
     });
   }
@@ -72,7 +72,7 @@ export class MovieCardComponent {
       .subscribe((res: any) => {
         this.snackBar.open(
           `${title} has been added to your favorite movies!`,
-          'Okay',
+          'Ok',
           {
             duration: 2000,
           }
@@ -87,8 +87,8 @@ export class MovieCardComponent {
       .removeFromFav(this.user.Username, movieId)
       .subscribe((res: any) => {
         this.snackBar.open(
-          `${title} has been removed from your favorite movies`,
-          'Okay',
+          `${title} has been removed from your favorite movies `,
+          'Ok',
           {
             duration: 2000,
           }
