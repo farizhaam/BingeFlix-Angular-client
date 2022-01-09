@@ -24,10 +24,18 @@ import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SynopsisCardComponent } from './synopsis-card/synopsis-card.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { EditCardComponent } from './edit-card/edit-card.component';
+import { DeleteCardComponent } from './delete-card/delete-card.component';
+
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -41,7 +49,10 @@ const appRoutes: Routes = [
     GenreCardComponent,
     DirectorCardComponent,
     UserProfileComponent,
-    SynopsisCardComponent
+    SynopsisCardComponent,
+    MenuBarComponent,
+    EditCardComponent,
+    DeleteCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +65,9 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
     MatSnackBarModule,
     MatIconModule,
     RouterModule.forRoot(appRoutes)
