@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss']
 })
 export class UserLoginFormComponent implements OnInit {
-
+  
+  /** 
+   * bind form input values to userCredentials object 
+   */
   @Input() userCredentials= { Username: '', Password: '' };
 
   constructor(
@@ -20,10 +23,18 @@ export class UserLoginFormComponent implements OnInit {
       public router: Router
       ) { }
 
-
+  /**
+  * Initializes the component
+  * @ignore
+  */
   ngOnInit(): void {
   }
 
+
+    /**
+    * Logs the user in by sending a request to the backend endpoint.
+    * A snack bar is shown, holding a message about the result of the operation.
+    */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userCredentials).subscribe((response) => {
       // Logic for a successful user registration goes here! (To be implemented)

@@ -7,7 +7,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./director-card.component.scss']
 })
 export class DirectorCardComponent implements OnInit {
-
+  /**
+    * All constructor items are documented as properties
+    * @ignore
+    */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -16,7 +19,10 @@ export class DirectorCardComponent implements OnInit {
       born: any;
     }
   ) {}
-
+   /**
+    * Initializes the component
+    * @ignore
+    */
   ngOnInit(): void {
   }
 

@@ -18,6 +18,10 @@ export class MovieCardComponent {
   movies: any[] = [];
   favMovies: any[] = [];
 
+  /**
+  * All constructor items are documented as properties
+  * @ignore
+  */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -25,11 +29,17 @@ export class MovieCardComponent {
     public snackBar: MatSnackBar
   ) { }
 
+    /**
+    * Initializes component, retrieves all movies and the user's faviorites
+    */
   ngOnInit(): void {
     this.getMovies();
     // this.getUserFavs();
   }
 
+  /**
+  * Retrieves all the movies from the database
+  */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -38,6 +48,11 @@ export class MovieCardComponent {
     });
   }
 
+    /**
+    * Opens a dialog containing info about the genre
+    * @param name the name of the genre
+    * @param description the description of the genre
+    */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreCardComponent, {
       data: { name, description },
@@ -45,20 +60,34 @@ export class MovieCardComponent {
     });
   }
 
+    /**
+    * Opens a dialog containing info about the director
+    * @param name the name of the director
+    * @param bio the bio of the director
+    * @param birthDate bith date of the director
+    * @param deathDate death date of the director
+    */
   openDirectorDialog(name: string, bio: string, born: any,): void {
     this.dialog.open(DirectorCardComponent, {
       data: {name, bio, born},
       width: '500px',
     });
   }
-
-  openSynopsisCardDialog(name: string, description: string, year: any,): void {
+   /**
+    * Opens a dialog containing the synopsis of the movie
+    * @param title the title of the movie
+    * @param description the description of the movie
+    */
+  openSynopsisCardDialog(name: string, description: string): void {
     this.dialog.open(SynopsisCardComponent, {
-      data: {name, description, year},
+      data: {name, description},
       width: '500px',
     });
   }
 
+     /**
+    * Updates the local list of favorites by downloading it from the DB
+    */
   // getUserFavs(): any {
   //   this.fetchApiData.getFavMovies(this.user.Username).subscribe((res: any) => {
   //     this.favMovies = res.FavoriteMovies;
@@ -66,6 +95,11 @@ export class MovieCardComponent {
   //   });
   // }
 
+     /**
+    * Adds a movie to the user's list of favorites
+    * @param movieId the id of the movie
+    * @param title the title of the movie
+    */
   // addToFavs(movieId: string, title: string): void {
   //   this.fetchApiData
   //     .addToFav(this.user.Username, movieId)
@@ -81,7 +115,11 @@ export class MovieCardComponent {
   //     });
   //   return this.getUserFavs();
   // }
-
+   /**
+    * Removes a movie from the user's list of favorites
+    * @param movieId the id of the movie
+    * @param title the title of the movie
+    */
   // removeFromFavs(movieId: string, title: string): void {
   //   this.fetchApiData
   //     .removeFromFav(this.user.Username, movieId)
@@ -97,11 +135,20 @@ export class MovieCardComponent {
   //     });
   //   return this.getUserFavs();
   // }
-
+   /**
+    * Checks if a movie is included in the user's list of favorites
+    * @param movieId the id of the movie
+    * @returns true if the movie is in the list of favorites, false otherwhise
+    */
   // isFav(movieId: string): boolean {
   //   return this.favMovies.some((movie) => movie._id === movieId);
   // }
-
+  /**
+    * Toggles the heart shaped icon from full to empty, and invokes the method to add or
+    * remove a function from the user's list of favorites
+    * @function toggleFavs
+    * @param movie the movie to add/remove to/from favs
+    */
   // toggleFavs(movie: any): void {
   //   this.isFav(movie._id)
   //     ? this.removeFromFavs(movie._id, movie.Title)

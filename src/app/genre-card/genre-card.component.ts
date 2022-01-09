@@ -7,7 +7,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./genre-card.component.scss']
 })
 export class GenreCardComponent implements OnInit {
-
+  /**
+    * All constructor items are documented as properties
+    * @ignore
+    */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -15,7 +18,10 @@ export class GenreCardComponent implements OnInit {
       description: string;
     }
   ) {}
-
+   /**
+    * Initializes the component
+    * @ignore
+    */
   ngOnInit(): void {
   }
 

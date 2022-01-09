@@ -9,9 +9,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-registration-form.component.scss']
 })
 export class UserRegistrationFormComponent implements OnInit {
-
+  /** 
+   * bind form input values to userData object 
+   */
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
+    /**
+    * All constructor items are documented as properties
+    * @ignore
+  */
   constructor(
       public fetchApiData: FetchApiDataService,
       public dialogRef: MatDialogRef<UserRegistrationFormComponent>,

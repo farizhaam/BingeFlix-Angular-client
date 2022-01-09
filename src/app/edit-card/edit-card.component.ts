@@ -10,19 +10,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class EditCardComponent implements OnInit {
   user: any = {};
-
+  /** 
+   * bind form input values to userData object 
+   */
   @Input() userData = {Username: this.user.Username, Password: this.user.Password, Email: this.user.Email, Birthday: this.user.Birthday}
 
+    /**
+   * All constructor items are documented as properties
+   * @ignore
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<EditCardComponent>,
     public snackBar: MatSnackBar,
   ) { }
 
+    /**
+   * Initializes the component
+   * @ignore
+   */
   ngOnInit(): void {
     this.getUser();
   }
-
+  
+  /**
+  * Retrieves userData from local storage
+  */
   getUser(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
@@ -32,6 +45,10 @@ export class EditCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Updates the info of the user, sending the data to the backend.
+   * A snack bar element is shown, containing the result of the operation
+   */
   editUserProfile(): void {
     this.fetchApiData.editUser(this.userData).subscribe((res: any) => {
       this.dialogRef.close();
