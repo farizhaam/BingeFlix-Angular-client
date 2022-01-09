@@ -27,7 +27,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
-    this.getUserFavs();
+    // this.getUserFavs();
   }
 
   getMovies(): void {
@@ -59,52 +59,52 @@ export class MovieCardComponent {
     });
   }
 
-  getUserFavs(): any {
-    this.fetchApiData.getFavMovies(this.user.Username).subscribe((res: any) => {
-      this.favMovies = res.FavoriteMovies;
-      return this.favMovies;
-    });
-  }
+  // getUserFavs(): any {
+  //   this.fetchApiData.getFavMovies(this.user.Username).subscribe((res: any) => {
+  //     this.favMovies = res.FavoriteMovies;
+  //     return this.favMovies;
+  //   });
+  // }
 
-  addToFavs(movieId: string, title: string): void {
-    this.fetchApiData
-      .addToFav(this.user.Username, movieId)
-      .subscribe((res: any) => {
-        this.snackBar.open(
-          `${title} has been added to your favorite movies!`,
-          'Ok',
-          {
-            duration: 2000,
-          }
-        );
-        this.ngOnInit();
-      });
-    return this.getUserFavs();
-  }
+  // addToFavs(movieId: string, title: string): void {
+  //   this.fetchApiData
+  //     .addToFav(this.user.Username, movieId)
+  //     .subscribe((res: any) => {
+  //       this.snackBar.open(
+  //         `${title} has been added to your favorite movies!`,
+  //         'Ok',
+  //         {
+  //           duration: 2000,
+  //         }
+  //       );
+  //       this.ngOnInit();
+  //     });
+  //   return this.getUserFavs();
+  // }
 
-  removeFromFavs(movieId: string, title: string): void {
-    this.fetchApiData
-      .removeFromFav(this.user.Username, movieId)
-      .subscribe((res: any) => {
-        this.snackBar.open(
-          `${title} has been removed from your favorite movies `,
-          'Ok',
-          {
-            duration: 2000,
-          }
-        );
-        this.ngOnInit();
-      });
-    return this.getUserFavs();
-  }
+  // removeFromFavs(movieId: string, title: string): void {
+  //   this.fetchApiData
+  //     .removeFromFav(this.user.Username, movieId)
+  //     .subscribe((res: any) => {
+  //       this.snackBar.open(
+  //         `${title} has been removed from your favorite movies `,
+  //         'Ok',
+  //         {
+  //           duration: 2000,
+  //         }
+  //       );
+  //       this.ngOnInit();
+  //     });
+  //   return this.getUserFavs();
+  // }
 
-  isFav(movieId: string): boolean {
-    return this.favMovies.some((movie) => movie._id === movieId);
-  }
+  // isFav(movieId: string): boolean {
+  //   return this.favMovies.some((movie) => movie._id === movieId);
+  // }
 
-  toggleFavs(movie: any): void {
-    this.isFav(movie._id)
-      ? this.removeFromFavs(movie._id, movie.Title)
-      : this.addToFavs(movie._id, movie.Title);
-  }
+  // toggleFavs(movie: any): void {
+  //   this.isFav(movie._id)
+  //     ? this.removeFromFavs(movie._id, movie.Title)
+  //     : this.addToFavs(movie._id, movie.Title);
+  // }
 }
