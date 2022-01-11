@@ -14,9 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  favMov: any = [];
+  favMovies: any = [];
   user: any = {};
-  movies: any[] = [];
   favorites: any[] = [];
   constructor(    
     public fetchApiData: FetchApiDataService,
@@ -30,8 +29,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   getUser(): void {
-    const user = localStorage.getItem('user');
-    this.fetchApiData.getUser(this.user.Username).subscribe((res: any) => {
+    let user = JSON.parse(localStorage.getItem('user') || '');
+    this.fetchApiData.getUser(user.Username).subscribe((res: any) => {
       this.user = res;
       console.log(this.user);
       return this.user
@@ -54,4 +53,18 @@ export class UserProfileComponent implements OnInit {
       width: '280px'
     });
   }
+
+  getFavMovies(): void {
+    let movies: any[] = [];
+    this.fetchApiData.getAllMovies().subscribe((res: any) => {
+      movies = res;
+      movies.forEach((movie: any) => {
+        if (this.user.FavoriteMovies.includes(movie._id)) {
+          this.favMovies.push(movie);
+        }
+      });
+    });
+    return this.favMovies;
+  }
+
 }
