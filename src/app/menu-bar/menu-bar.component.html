@@ -1,11 +1,11 @@
 <div class="menu-bar">
     <mat-toolbar class="menubar">
-        <img src="assets/img/BingeFlix.png">
+        <img src="assets/img/BingeFlix2.png" (click)="toMovies()">
     
         <span class="spacer"></span>
         <button mat-button (click)="toUser()">Profile</button>
-        <!-- <button mat-button (click)="toMovies()" >Movies</button> -->
+        <button mat-button (click)="toMovies()" >Movies</button>
         
-        <button mat-raised-button color="accent" (click)="userLogout()">Logout</button>
+        <button mat-raised-button color="primary" (click)="userLogout()">Logout</button>
     </mat-toolbar>
 </div>
