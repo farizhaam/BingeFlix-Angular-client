@@ -1,0 +1,55 @@
+.user-profile {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+    box-shadow: 0px 6px 14px #1d1e31;
+    background-color: #0d0229;
+  
+@media screen and (max-width: 500px) {
+        width: 68%;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    button {
+        width: 100%;
+        &:first-child {
+        margin-bottom: 10px;
+        }
+    }
+    }
+}
+}
+
+.usercard{
+    background-color: #110438;
+    color:#faebd7;
+    padding: 30px;
+}
+
+.usercard-title{
+    font-size: 50px;
+}
+
+.usercard-content{
+    margin: 20px;
+    font-size: 17px;
+}
+
+.usercard-actions{
+    position: relative;
+    align-content: center;
+}
