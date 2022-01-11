@@ -17,8 +17,7 @@ export class MenuBarComponent implements OnInit{
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
     public router: Router,
-    public snackBar: MatSnackBar,
-    public movieCard: MovieCardComponent,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +26,10 @@ export class MenuBarComponent implements OnInit{
 
   toUser(): void {
     this.router.navigate(['profile']);
+  }
+
+  toMovies(): void {
+    this.router.navigate(['movies']);
   }
 
   userLogout(): void {
