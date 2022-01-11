@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 60px 30px;
-    background-color: #fff;
+    background-color: #0d0229;
     @media screen and (max-width: 500px) {
         padding: 0;
     }
@@ -22,9 +22,11 @@
     align-items: center;
     position: relative;
     padding: 40px;
-    background-color: #fff;
+    background-color: #110438;
+    color:#faebd7;
     max-width: 300px;
     width: 300px;
+    margin: 20px;
 }
 .mat-icon-button {
     position: absolute;
@@ -43,14 +45,16 @@ img {
     width: 100%;
 }
 .genre-button{
-    color: #000;
+    color:antiquewhite;
     border-radius: 20px;
-    border: 2px #fff;
+}
+.director{
+    color:antiquewhite;
 }
 .director-button{
     padding: 0px !important;
 }
 .synopsis-button{
-
+    color:antiquewhite;
     right: -12px;
 }
